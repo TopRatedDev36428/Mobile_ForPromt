@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fortinge.prompter.ui.SettingsFragment"
+    android:background="@color/ForPromptGray">
+
+    <TextView
+        android:id="@+id/settingsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="@string/toolbar_text"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/setting_container_height"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/settingsTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/setting_margins"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/generalTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:height="@dimen/setting_container_height"
+                    android:background="@color/Fortinge_Navigation_Background"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/setting_margins"
+                    android:text="@string/general"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/settingsTitle" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_container_height"
+                    android:layout_margin="@dimen/setting_margins"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/showSpeedRate"
+                        tools:visibility="invisible">
+
+                        <Spinner
+                            android:id="@+id/speedRateSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/setting_margins"
+                            android:layout_marginTop="@dimen/setting_margins"
+                            android:layout_marginEnd="@dimen/setting_margins"
+                            android:layout_marginBottom="@dimen/setting_margins"
+                            android:layout_weight="1"
+                            android:background="@drawable/line_border"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:layout_editor_absoluteY="0dp" />
+
+                        <ImageView
+                            android:id="@+id/speedRateSpinner2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/ic_expand" />
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="@dimen/setting_labels_width"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/speed_rate"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+                    <Switch
+                        android:id="@+id/showSpeedRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.478"
+                        tools:ignore="UseSwitchCompatOrMaterialXml"
+                        tools:visibility="visible" />
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_container_height"
+                    android:layout_margin="@dimen/setting_margins"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/countdownLbl"
+                        android:layout_width="@dimen/setting_labels_width"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/countdown"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/line_border"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/countdownSwitch"
+                        tools:visibility="invisible">
+
+                        <ImageButton
+                            android:id="@+id/countdownMinusBtn"
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/ic_arrow_left"
+                            app:layout_constraintLeft_toLeftOf="parent" />
+
+                        <EditText
+                            android:id="@+id/countdownNumberPicker"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/trans"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintLeft_toRightOf="@id/countdownMinusBtn"
+                            app:layout_constraintRight_toLeftOf="@id/countdownPlusBtn"
+                            tools:ignore="HardcodedText"
+                            tools:layout_editor_absoluteY="0dp" />
+
+                        <ImageButton
+                            android:id="@+id/countdownPlusBtn"
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/ic_arrow_right"
+                            app:layout_constraintRight_toRightOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Switch
+                        android:id="@+id/countdownSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/countdownLbl"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_container_height"
+                    android:layout_margin="@dimen/setting_margins"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/showCueMarker"
+                        android:layout_width="@dimen/setting_labels_width"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/cue_indicator"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                    <SeekBar
+                        android:id="@+id/editCueMarkerPosition"
+                        android:layout_width="172dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="24dp"
+                        android:max="6"
+                        android:progress="3"
+                        android:visibility="invisible"
+                        app:layout_constraintEnd_toEndOf="parent"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/markerSwitch"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Switch
+                        android:id="@+id/markerSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="88dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/showCueMarker"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_container_height"
+                    android:layout_margin="@dimen/setting_margins"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/loopLbl"
+                        android:layout_width="@dimen/setting_labels_width"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/loop"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+
+                    <Switch
+                        android:id="@+id/loopSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="88dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/loopLbl"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_container_height"
+                    android:layout_margin="@dimen/setting_margins"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/showScrollLbl"
+                        android:layout_width="@dimen/setting_labels_width"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/show_scroll"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+
+                    <Switch
+                        android:id="@+id/showScrollSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="88dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/showScrollLbl"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_container_height"
+                    android:layout_margin="@dimen/setting_margins"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/marginsLbl"
+                        android:layout_width="@dimen/setting_labels_width"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/margins"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+
+                        android:id="@+id/constraintLayout2"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/line_border"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/marginsSwitch"
+                        tools:layout_editor_absoluteY="3dp"
+                        tools:visibility="invisible">
+
+                        <ImageButton
+                            android:id="@+id/marginsMinusBtn"
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/ic_arrow_left"
+                            app:layout_constraintLeft_toLeftOf="parent" />
+
+                        <EditText
+                            android:id="@+id/marginsNumberPicker"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/trans"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintLeft_toRightOf="@id/marginsMinusBtn"
+                            app:layout_constraintRight_toLeftOf="@id/marginsPlusBtn"
+                            tools:ignore="HardcodedText"
+                            tools:layout_editor_absoluteY="0dp" />
+
+                        <ImageButton
+                            android:id="@+id/marginsPlusBtn"
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/ic_arrow_right"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:layout_editor_absoluteY="0dp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Switch
+                        android:id="@+id/marginsSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/marginsLbl"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_container_height"
+                    android:layout_margin="@dimen/setting_margins"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/rtlLbl"
+                        android:layout_width="@dimen/setting_labels_width"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/right_to_left"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+
+                    <Switch
+                        android:id="@+id/rtlSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_container_height"
+                    android:layout_margin="@dimen/setting_margins"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textColorLbl"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/text_color"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toRightOf="@id/textColorLbl"
+                        app:layout_constraintRight_toRightOf="parent">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc1Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/white" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc2Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/black" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc3Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_3" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc4Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_4" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc5Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_5" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc6Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_6" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc7Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_7" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc8Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_8" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc9Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_9" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc10Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_10" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc11Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_11" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc12Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_12" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc13Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_13" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc14Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_14" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc15Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_15" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc16Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_16" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc17Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_17" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/tc18Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_18" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_container_height"
+                    android:layout_margin="@dimen/setting_margins"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/backgroundColorLbl"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/background_color"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toRightOf="@id/backgroundColorLbl"
+                        app:layout_constraintRight_toRightOf="parent">
+
+                        <Button
+                            android:id="@+id/bc1Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/white" />
+
+                        <Button
+                            android:id="@+id/bc2Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/black" />
+
+                        <Button
+                            android:id="@+id/bc3Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_3" />
+
+                        <Button
+                            android:id="@+id/bc4Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_4" />
+
+                        <Button
+                            android:id="@+id/bc5Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_5" />
+
+                        <Button
+                            android:id="@+id/bc6Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_6" />
+
+                        <Button
+                            android:id="@+id/bc7Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_7" />
+
+                        <Button
+                            android:id="@+id/bc8Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_8" />
+
+                        <Button
+                            android:id="@+id/bc9Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_9" />
+
+                        <Button
+                            android:id="@+id/bc10Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_10" />
+
+                        <Button
+                            android:id="@+id/bc11Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_11" />
+
+                        <Button
+                            android:id="@+id/bc12Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_12" />
+
+                        <Button
+                            android:id="@+id/bc13Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_13" />
+
+                        <Button
+                            android:id="@+id/bc14Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_14" />
+
+                        <Button
+                            android:id="@+id/bc15Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_15" />
+
+                        <Button
+                            android:id="@+id/bc16Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_16" />
+
+                        <Button
+                            android:id="@+id/bc17Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_17" />
+
+                        <Button
+                            android:id="@+id/bc18Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".1"
+                            android:backgroundTint="@color/settings_color_18" />
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_container_height"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/colorSampleText"
+                        android:layout_width="240dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/black"
+                        android:gravity="center"
+                        android:text="Your text will look like this"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/setting_margins">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_container_height"
+                    app:layout_constraintTop_toBottomOf="@id/settingsTitle">
+
+                    <TextView
+                        android:id="@+id/bluetoothTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:height="@dimen/setting_container_height"
+                        android:text="@string/bluetooth_controller"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:background="@color/Fortinge_Navigation_Background"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:padding="@dimen/setting_margins"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+                    <ImageView
+                        android:id="@+id/bleRotatingImage"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ble_rotate"
+                        app:layout_constraintRight_toLeftOf="@id/bleScanSwitch"
+                        tools:layout_editor_absoluteY="10dp" />
+
+                    <Switch
+                        android:id="@+id/bleScanSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_container_height"
+                    android:orientation="horizontal"
+                    android:layout_margin="@dimen/setting_margins">
+
+                    <TextView
+                        android:id="@+id/bleLbl"
+                        android:layout_width="@dimen/setting_labels_width"
+                        android:layout_height="match_parent"
+                        android:text="@string/bluetooth_device"
+                        android:textColor="@color/white"
+                        android:gravity="center_vertical"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toRightOf="@id/bleLbl"
+                        app:layout_constraintRight_toLeftOf="@id/bleConnectionSwitch">
+
+                        <Spinner
+                            android:id="@+id/bleDevicesSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/line_border" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_expand"
+                            android:layout_centerVertical="true" />
+                    </RelativeLayout>
+
+
+                    <Switch
+                        android:id="@+id/bleConnectionSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/bleStatusTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="#262626"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/white" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/setting_margins">
+
+
+                    <TextView
+                        android:id="@+id/aboutTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:height="@dimen/setting_container_height"
+                        android:text="@string/about"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:background="@color/Fortinge_Navigation_Background"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:padding="@dimen/setting_margins"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/ForPromptGray"
+                        app:layout_constraintTop_toBottomOf="parent">
+
+                        <ImageView
+                            android:id="@+id/logoImg"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/setting_container_height"
+                            android:background="#262626"
+                            android:src="@drawable/fortinge_master_logo_w_2019"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/systemVersionLnr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#262626"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            app:layout_constraintTop_toBottomOf="@id/logoImg">
+
+                            <TextView
+                                android:id="@+id/forpromptLbl"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:gravity="center"
+                                android:text="ForPrompt v3.1"
+                                android:textColor="@color/gray"
+                                tools:ignore="HardcodedText" />
+
+
+                            <TextView
+                                android:id="@+id/systemInfoLblBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:contextClickable="true"
+                                android:text="@string/show_system_information"
+                                android:textColor="@color/gray" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/linksLbl"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:background="#262626"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            app:layout_constraintTop_toBottomOf="@id/systemVersionLnr">
+
+                            <TextView
+                                android:id="@+id/websiteTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/setting_margins"
+                                android:autoLink="web"
+                                android:text="www.fortinge.com"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/emailTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/setting_margins"
+                                android:autoLink="email"
+                                android:text="support@fortinge.com"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/trademarkLbl"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#262626"
+                            android:gravity="center"
+                            android:text="@string/trademark_rights"
+                            android:textColor="@color/gray"
+                            app:layout_constraintTop_toBottomOf="@id/linksLbl" />
+
+
+
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

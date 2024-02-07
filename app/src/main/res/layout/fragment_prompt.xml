@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cueMarker"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context="com.fortinge.prompter.ui.PromptFragment">
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toStartOf="@+id/promptScrollBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/scrollingTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:clickable="true"
+            android:fontFamily="sans-serif"
+            android:scrollbars="vertical"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="70sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="-1dp"
+                tools:layout_editor_absoluteY="319dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="-250dp">
+
+
+                    <ImageView
+                        android:id="@+id/cueMarkerArrow0"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/cue_marker_new"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.149" />
+
+                    <ImageView
+                        android:id="@+id/cueMarkerArrow1"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/cue_marker_new"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.28" />
+
+                    <ImageView
+                        android:id="@+id/cueMarkerArrow2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/cue_marker_new"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.415" />
+
+                    <ImageView
+                        android:id="@+id/cueMarkerArrow3"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/cue_marker_new"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.543" />
+
+                    <ImageView
+                        android:id="@+id/cueMarkerArrow4"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/cue_marker_new"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.668" />
+
+                    <ImageView
+                        android:id="@+id/cueMarkerArrow5"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/cue_marker_new"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.789" />
+
+
+                    <ImageView
+                        android:id="@+id/cueMarkerArrow6"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/cue_marker_new"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.904" />
+
+                    <View
+                        android:id="@+id/gizleButon"
+                        android:layout_width="90dp"
+                        android:layout_height="50dp"
+                        android:background="#80424242"
+                        android:backgroundTint="#454545"
+                        android:foreground="@drawable/expand_new_i"
+                        app:layout_constraintBottom_toTopOf="@+id/promptBarLay"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <View
+                        android:id="@+id/gosterButon"
+                        android:layout_width="90dp"
+                        android:layout_height="50dp"
+                        android:background="#80424242"
+                        android:backgroundTint="#80424242"
+                        android:foreground="@drawable/expand_new_ii"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <LinearLayout
+
+                        android:id="@+id/promptBarLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/ForPromptGray"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:visibility="visible">
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="59dp"
+                            tools:visibility="visible">
+
+                            <Button
+                                android:id="@+id/promptMinusBtn"
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="25dp"
+                                android:background="@color/trans"
+                                android:gravity="center"
+                                android:text="-"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="20dp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="HardcodedText" />
+
+                            <com.google.android.material.slider.Slider
+                                android:id="@+id/promptSpeedBar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginBottom="8dp"
+                                android:longClickable="false"
+                                android:stepSize="1"
+                                android:value="2"
+
+                                android:valueFrom="-6"
+                                android:valueTo="6"
+                                app:haloColor="@color/ForPromptNavColor"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:thumbColor="@color/ForPromptNavColor"
+                                app:thumbStrokeColor="@color/blue"
+                                app:tickColor="@color/gray"
+                                app:tickColorActive="@color/black"
+                                app:tickColorInactive="@color/blue"
+                                app:trackColorActive="@color/black"
+                                app:trackColorInactive="@color/black"
+                                app:trackHeight="8dp" />
+
+                            <Button
+                                android:id="@+id/promptPlusBtn"
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="25dp"
+                                android:background="@color/trans"
+                                android:gravity="center"
+                                android:text="+"
+                                android:textColor="@color/white"
+                                android:textSize="20dp"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="HardcodedText" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:columnCount="6"
+                            android:orientation="horizontal"
+                            android:rowCount="2"
+                            tools:visibility="visible">
+
+                            <ImageButton
+                                android:id="@+id/startStopBtn"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_row="0"
+                                android:layout_column="0"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="center"
+                                android:background="@drawable/continue_new"
+                                android:foreground="@drawable/continue_new" />
+
+                            <ImageButton
+                                android:id="@+id/topBtn"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_row="0"
+                                android:layout_column="1"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="center"
+                                android:background="@drawable/top_new" />
+
+                            <ImageButton
+                                android:id="@+id/bottomBtn"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_row="0"
+                                android:layout_column="2"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bottom_new" />
+
+                            <ImageButton
+                                android:id="@+id/flipBtn"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_row="0"
+                                android:layout_column="3"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="center"
+                                android:background="@drawable/flip_new" />
+
+                            <ImageButton
+                                android:id="@+id/mirrorBtn"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_row="0"
+                                android:layout_column="4"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="center"
+                                android:background="@drawable/flip_new"
+                                android:rotation="-270" />
+
+                            <ImageButton
+                                android:id="@+id/openFileBtn"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_row="0"
+                                android:layout_column="5"
+                                android:layout_columnWeight="1"
+                                android:layout_gravity="center"
+                                android:background="@drawable/open_new" />
+
+                            <TextView
+                                android:id="@+id/startStopText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/prompt_text_height"
+                                android:layout_gravity="center"
+                                android:text="@string/start"
+                                android:textColor="@color/grid_text_color" />
+
+                            <TextView
+                                android:id="@+id/topText"
+                                android:layout_height="@dimen/prompt_text_height"
+                                android:layout_gravity="center"
+                                android:text="@string/top"
+                                android:textColor="@color/grid_text_color" />
+
+                            <TextView
+                                android:id="@+id/bottomText"
+                                android:layout_height="@dimen/prompt_text_height"
+                                android:layout_gravity="center"
+                                android:text="@string/bottom"
+                                android:textColor="@color/grid_text_color" />
+
+                            <TextView
+                                android:id="@+id/flipText"
+                                android:layout_height="@dimen/prompt_text_height"
+                                android:layout_gravity="center"
+                                android:text="@string/flip"
+                                android:textColor="@color/grid_text_color" />
+
+                            <TextView
+                                android:id="@+id/mirrorText"
+                                android:layout_height="@dimen/prompt_text_height"
+                                android:layout_gravity="center"
+                                android:text="@string/mirror"
+                                android:textColor="@color/grid_text_color" />
+
+                            <TextView
+                                android:id="@+id/openFileText"
+                                android:layout_height="@dimen/prompt_text_height"
+                                android:layout_gravity="center"
+                                android:text="@string/open"
+                                android:textColor="@color/grid_text_color" />
+
+
+                        </GridLayout>
+
+
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/promptScrollBar"
+        android:layout_width="6dp"
+        android:layout_height="530dp"
+        android:background="@color/white"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <FrameLayout
+            android:id="@+id/promptScrollHandler"
+            android:layout_width="match_parent"
+            android:layout_height="119dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/gray" />
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+

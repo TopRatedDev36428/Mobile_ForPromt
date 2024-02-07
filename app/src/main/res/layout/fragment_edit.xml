@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fortinge.prompter.ui.EditFragment"
+    >
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/promptBarLay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:clickable="true"
+            android:ems="10"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:fontFamily="sans-serif"
+            android:gravity="center_horizontal"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:overScrollMode="always"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarSize="20dp"
+            android:scrollbarStyle="insideInset"
+            android:scrollbarThumbVertical="@color/white"
+            android:scrollbars="vertical"
+            android:selectAllOnFocus="true"
+            android:text="@string/prompt_default_text"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textIsSelectable="true"
+            android:textSize="70sp"
+            android:verticalScrollbarPosition="right" />
+
+
+    </FrameLayout>
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/promptBarLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/ForPromptGray">
+
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/editFontSizeBar"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:background="@drawable/gradients"
+            android:longClickable="false"
+            android:value="90"
+            android:valueFrom="10"
+            android:valueTo="190"
+            app:haloColor="@color/ForPromptNavColor"
+            app:labelBehavior="gone"
+            app:thumbColor="@color/ForPromptNavColor"
+            app:thumbStrokeColor="@color/blue"
+            app:tickColorActive="@color/black"
+            app:tickColorInactive="@color/blue"
+            app:trackColorActive="@color/black"
+            app:trackColorInactive="@color/black"
+            app:trackHeight="1dp" />
+
+        <GridLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="6"
+            android:orientation="horizontal"
+            android:rowCount="2">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/boldBtn"
+                android:layout_width="@dimen/prompt_grid_buttons"
+                android:layout_height="@dimen/prompt_grid_buttons"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:background="@color/trans"
+                android:gravity="center"
+                android:text="@string/b"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="35dp" />
+
+            <ImageButton
+                android:id="@+id/copyBtn"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:background="@drawable/copy_new" />
+
+            <ImageButton
+                android:id="@+id/pasteBtn"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:background="@drawable/paste_new"
+                android:scaleType="fitCenter"
+                android:text="@string/paste" />
+
+
+            <ImageButton
+                android:id="@+id/clearBtn"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:background="@drawable/delete_new"
+                android:text="@string/clear" />
+
+            <ImageButton
+                android:id="@+id/alignmentBtn"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_row="0"
+                android:layout_column="4"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:background="@drawable/center_new"
+                android:text="@string/center" />
+
+
+            <ImageButton
+                android:id="@+id/saveBtn"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_row="0"
+                android:layout_column="5"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:background="@drawable/save_new"
+                android:text="@string/save" />
+
+            <TextView
+                android:id="@+id/boldText"
+                android:layout_height="@dimen/prompt_text_height"
+                android:layout_gravity="center"
+                android:text="@string/bold"
+                android:textColor="@color/grid_text_color" />
+
+            <TextView
+                android:id="@+id/copyText"
+                android:layout_height="@dimen/prompt_text_height"
+                android:layout_gravity="center"
+                android:text="@string/copy"
+                android:textColor="@color/grid_text_color" />
+
+            <TextView
+                android:id="@+id/pasteText"
+                android:layout_height="@dimen/prompt_text_height"
+                android:layout_gravity="center"
+                android:text="@string/paste"
+                android:textColor="@color/grid_text_color" />
+
+            <TextView
+                android:id="@+id/clearText"
+                android:layout_height="@dimen/prompt_text_height"
+                android:layout_gravity="center"
+                android:text="@string/clear"
+                android:textColor="@color/grid_text_color" />
+
+            <TextView
+                android:id="@+id/alignmentText"
+                android:layout_height="@dimen/prompt_text_height"
+                android:layout_gravity="center"
+                android:text="@string/center"
+                android:textColor="@color/grid_text_color" />
+
+            <TextView
+                android:id="@+id/saveFileText"
+                android:layout_height="@dimen/prompt_text_height"
+                android:layout_gravity="center"
+                android:text="@string/save"
+                android:textColor="@color/grid_text_color" />
+
+
+        </GridLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_prompt">Prompt</string>
+    <string name="title_edit">Düzenle</string>
+    <string name="title_settings">Ayarlar</string>
+    <string name="start">Başlat</string>
+    <string name="stop">Durdur</string>
+    <string name="toolbar_text">AYARLAR</string>
+    <string name="background_color">Arka Plan Rengi</string>
+    <string name="text_color">Metin Rengi</string>
+    <string name="right_to_left">Sağdan Sola</string>
+    <string name="margins">Daralt(%)</string>
+    <string name="loop">Döngü</string>
+    <string name="countdown">Geri Sayım</string>
+    <string name="speed_rate">Hız Oranı</string>
+    <string name="bluetooth_device">Bluetooth Cihazı</string>
+    <string name="show_system_information">Sistem bilgilerini göster!</string>
+    <string name="show_scroll">Kaydıracı Göster</string>
+    <string name="top">Başa</string>
+    <string name="bottom">Sona</string>
+    <string name="flip">Yatay Çevir</string>
+    <string name="mirror">Dikey Çevir</string>
+    <string name="open">Aç</string>
+    <string name="paste">Yapıştır</string>
+    <string name="clear">Temizle</string>
+    <string name="center">Ortala</string>
+    <string name="save">Kaydet</string>
+    <string name="bold">Kalın</string>
+    <string name="copy">Kopyala</string>
+    <string name="bluetooth_controller">Bluetooth Yönetim</string>
+    <string name="about">Hakkında</string>
+    <string name="selectafile">Dosya seç</string>
+    <string name="opensettings">Ayarları aç</string>
+    <string name="cancel">İptal</string>
+    <string name="left">Sola</string>
+    <string name="right">Sağa</string>
+    <string name="textcopiedtoclipboard">Metin kopyalandı.</string>
+    <string name="textpastedfromclipboard">Metin yapıştırıldı.</string>
+    <string name="pathiswrong">Dosya yolu yanlış.</string>
+    <string name="openlocationservice">Lütfen konum servislerini etkinleştirin!</string>
+    <string name="entervalue">Lütfen değer girin.</string>
+    <string name="systeminfo">Sistem Bilgisi</string>
+    <string name="devicemodel">Cihaz Modeli</string>
+    <string name="androidversion">Android Versiyonu</string>
+    <string name="supportedremotecontroller">Desteklenen kumanda</string>
+    <string name="close">Kapat</string>
+    <string name="continu">Devam</string>
+    <string name="cue_indicator">İşaret Gösterici</string>
+    <string name="general">Genel</string>
+    <string name="str_ok">Tamam</string>
+    <string name="str_cancel">İptal</string>
+    <string name="permission_txt">ForPrompt Tablet Prompter uygulaması, kapalıyken veya kullanılmadığında bile bluetooth\'u etkinleştirmek için konum verilerini toplar.</string>
+
+</resources>

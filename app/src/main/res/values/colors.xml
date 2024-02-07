@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="red">#F44336</color>
+    <color name="blue">#2196F3</color>
+    <color name="green">#4CAF50</color>
+    <color name="ForPromptGray">#262626</color>
+    <color name="ForPromptNavColor">#404040</color>
+    <color name="FortingePink">@color/design_default_color_primary</color>
+    <color name="Fortinge_Navigation_Background">#404040</color>
+    <color name="settings_color_3">#c2c2c2</color>
+    <color name="settings_color_4">#585858</color>
+    <color name="settings_color_5">#7c171f</color>
+    <color name="settings_color_6">#da3830</color>
+    <color name="settings_color_7">#eb843f</color>
+    <color name="settings_color_8">#f4c948</color>
+    <color name="settings_color_9">#fbebaf</color>
+    <color name="settings_color_10">#fdf150</color>
+    <color name="settings_color_11">#d1f953</color>
+    <color name="settings_color_12">#69cb59</color>
+    <color name="settings_color_13">#a7fdfa</color>
+    <color name="settings_color_14">#4fa6ed</color>
+    <color name="settings_color_15">#3e4cc4</color>
+    <color name="settings_color_16">#a94ab3</color>
+    <color name="settings_color_17">#f0b1c6</color>
+    <color name="settings_color_18">#b17b5c</color>
+    <color name="trans">#00000000</color>
+    <color name="semi_trans">#19030300</color>
+    <color name="grid_text_color">#C8C8C8</color>
+
+    <color name="toggle_hover">@color/gray</color>
+    <color name="toggle_normal">@color/gainsboro</color>
+    <color name="toggle_active">@color/silver</color>
+    <color name="toggle_normal_off">@color/darkgray</color>
+
+    <color name="gainsboro">#DCdCdC</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="darkgray">#a9a9a9</color>
+    <color name="gray">#808080</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="colorTransparentBlack">#63060000</color>
+
+</resources>
